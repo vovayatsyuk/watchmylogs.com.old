@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
+
+.tippy-box[data-theme~="amber"] {
+  @apply bg-amber-400 text-black rounded-none;
+}
+.tippy-box[data-theme~="amber"][data-placement^="top"] > .tippy-arrow:before {
+  @apply border-t-amber-400;
+}
+.tippy-box[data-theme~="amber"][data-placement^="bottom"] > .tippy-arrow:before {
+  @apply border-b-amber-400;
+}
+.tippy-box[data-theme~="amber"][data-placement^="left"] > .tippy-arrow:before {
+  @apply border-l-amber-400;
+}
+.tippy-box[data-theme~="amber"][data-placement^="right"] > .tippy-arrow:before {
+  @apply border-r-amber-400;
+}
+.tippy-box[data-theme~="amber"] > .tippy-backdrop {
+  @apply bg-amber-400;
+}
+.tippy-box[data-theme~="amber"] > .tippy-svg-arrow {
+  @apply fill-amber-400;
+}
+
 @tailwind utilities;

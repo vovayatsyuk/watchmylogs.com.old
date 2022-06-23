@@ -11,6 +11,8 @@
     <link rel="manifest" href="/manifest.webmanifest">
     <link href="/assets/styles.css" rel="stylesheet">
     <script src="/assets/marquee3k.js" defer></script>
+    <script src="/assets/popper.js" defer></script>
+    <script src="/assets/tippy-bundle.js" defer></script>
   </head>
   <body>
     <h1 class="text-4xl leading-snug sm:text-6xl sm:leading-snug 2xl:text-7xl 2xl:leading-snug font-extrabold text-center my-8 2xl:my-12">
@@ -43,30 +45,30 @@
       <h2 class="text-5xl leading-snug sm:text-6xl sm:leading-snug">
         What makes it <span class="whitespace-nowrap"><span class="uppercase bg-amber-400 p-3 py-0 inline-block selection:bg-black selection:text-white">GOAT</span>?</span>
       </h2>
-      <div class="marquee3k bg-black opacity-[.89] text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap mt-10 sm:mt-12 2xl:mt-16" data-speed="0.25" data-reverse="true">
+      <div class="marquee3k bg-black opacity-[.89] text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap mt-10 sm:mt-12 2xl:mt-16" data-speed="0.25" data-pausable="true" data-reverse="true">
         <div>
-          <span class="cursor-default mx-4 hover:text-amber-400">Unlimited Sources</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Incremental Reads</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Log Stacking</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Object Dumps</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">SQL Formatter</span>
+          <span data-tippy data-tippy-content="You can add unlimited number of *.log files and folders in the app settings." class="cursor-default mx-4 hover:text-amber-400">Unlimited Sources</span>
+          <span data-tippy data-tippy-content="On each change we read only the new portion of log. This makes an App blazing fast!" class="cursor-default mx-4 hover:text-amber-400">Incremental Reads</span>
+          <span data-tippy data-tippy-content="Similar log entries are grouped into stacks to keep more space for valuable information." class="cursor-default mx-4 hover:text-amber-400">Log Stacking</span>
+          <span data-tippy data-tippy-content="App parse and render JSON objects in a perfectly readable format." class="cursor-default mx-4 hover:text-amber-400">Object Dumps</span>
+          <span data-tippy data-tippy-content="Slow SQL queries are nicely formatted and ready to be taken for further work." class="cursor-default mx-4 hover:text-amber-400">SQL Formatter</span>
         </div>
       </div>
-      <div class="marquee3k bg-black text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap" data-speed="0.19">
+      <div class="marquee3k bg-black text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap" data-speed="0.19" data-pausable="true">
         <div>
-          <span class="cursor-default mx-4 hover:text-amber-400">Error Renderer</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Jump to File</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Log Notifier</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Copy to Clipboard</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Log Filter</span>
+          <span data-tippy data-tippy-content="We split every error into title, file, and body for easier reading." class="cursor-default mx-4 hover:text-amber-400">Error Renderer</span>
+          <span data-tippy data-tippy-content="We render each path to the file as a link. Click-click." class="cursor-default mx-4 hover:text-amber-400">Jump to File</span>
+          <span data-tippy data-tippy-content="Just add a text pattern and we will inform you when it's added to the log." class="cursor-default mx-4 hover:text-amber-400">Log Notifier</span>
+          <span data-tippy data-tippy-content="Copy important stuff in a single click." class="cursor-default mx-4 hover:text-amber-400">Copy to Clipboard</span>
+          <span data-tippy data-tippy-content="Hide nasty entries with two mouse clicks!" class="cursor-default mx-4 hover:text-amber-400">Log Filter</span>
         </div>
       </div>
-      <div class="marquee3k bg-black opacity-[.93] text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap" data-speed="0.1" data-reverse="true">
+      <div class="marquee3k bg-black opacity-[.93] text-white py-8 sm:py-12 2xl:py-16 uppercase flex whitespace-nowrap" data-speed="0.1" data-pausable="true" data-reverse="true">
         <div>
-          <span class="cursor-default mx-4 hover:text-amber-400">Multiplatform</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">OpenSource</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Laravel</span>
-          <span class="cursor-default mx-4 hover:text-amber-400">Magento</span>
+          <span data-tippy data-tippy-content="App is available for Mac, Linux, and Windows." class="cursor-default mx-4 hover:text-amber-400">Multiplatform</span>
+          <span data-tippy data-tippy-content="App code is opensourced under the GPL license." class="cursor-default mx-4 hover:text-amber-400">OpenSource</span>
+          <span data-tippy data-tippy-content="App shows path to the proper view file in exception trace. Laravel models are perfectly rendered in the app." class="cursor-default mx-4 hover:text-amber-400">Laravel</span>
+          <span data-tippy data-tippy-content="Generated files paths automatically replaced with paths to original files." class="cursor-default mx-4 hover:text-amber-400">Magento</span>
         </div>
       </div>
     </section>
@@ -97,6 +99,14 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         Marquee3k.init()
+
+        tippy('[data-tippy]', {
+          allowHTML: true,
+          theme: 'amber',
+          interactive: true,
+          // hideOnClick: false,
+          // trigger: 'click',
+        });
       })
     </script>
   </body>
